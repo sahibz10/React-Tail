@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <main>
         <HeroSection />
-        <H1>1</H1>
+        <div>hi</div>
       </main>
 
     </div>
