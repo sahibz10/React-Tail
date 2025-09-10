@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-// A simple placeholder for the logo
+
 const Logo = () => (
     <div className="flex items-center space-x-2">
         <svg className="h-8 w-auto text-blue-600" viewBox="0 0 32 32" fill="currentColor">
@@ -20,7 +20,7 @@ const Navbar = () => {
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                 <Logo />
                 <div className="hidden md:flex items-center space-x-8">
-                    {navLinks.map((link) => (
+                    {navLinks.map((link) => (                 //  automatically creating a nav link for every item in list.
                         <a key={link} href="#" className="text-gray-600 hover:text-blue-600 font-medium">
                             {link}
                         </a>
