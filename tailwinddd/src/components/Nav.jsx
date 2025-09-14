@@ -4,11 +4,11 @@ import React from 'react';
 
 
 const Logo = () => (
-    <a href ="#">className="flex items-center space-x-2"
+    <a href="#" className="flex items-center space-x-2">
         <svg className="h-8 w-auto text-blue-600" viewBox="0 0 32 32" fill="currentColor">
-            <path d="M16 0 L32 16 L16 32 L0 16 Z M16 4 L4 16 L16 28 L28 16 Z"/>
+            <path d="M16 0 L32 16 16 32 L0 16 Z M16 4 L4 16 L16 28 L28 16" />
         </svg>
-        <span className="font-bold text-xl text-gray-800">MULTYFI</span>
+        <span className="feont-bold text-xl text-gray-800">MULTYFI</span>
     </a>
 );
 
@@ -25,10 +25,10 @@ const Navbar = () => {
                             {link}
                         </a>
                     ))}
+                    <button className="bg-blue-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors">
+                        Login
+                    </button>
                 </div>
-                <button className="bg-blue-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors">
-                    Login
-                </button>
             </nav>
         </header>
     );
