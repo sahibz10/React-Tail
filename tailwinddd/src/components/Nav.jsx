@@ -4,12 +4,12 @@ import React from 'react';
 
 
 const Logo = () => (
-    <div className="flex items-center space-x-2">
+    <a href ="#">className="flex items-center space-x-2"
         <svg className="h-8 w-auto text-blue-600" viewBox="0 0 32 32" fill="currentColor">
             <path d="M16 0 L32 16 L16 32 L0 16 Z M16 4 L4 16 L16 28 L28 16 Z"/>
         </svg>
         <span className="font-bold text-xl text-gray-800">MULTYFI</span>
-    </div>
+    </a>
 );
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                 <Logo />
                 <div className="hidden md:flex items-center space-x-8">
-                    {navLinks.map((link) => (                 //  automatically creating a nav link for every item in list.
+                    {navLinks.map((link) => (                 //  this automatically creating a nav link for every item in list.
                         <a key={link} href="#" className="text-gray-600 hover:text-blue-600 font-medium">
                             {link}
                         </a>

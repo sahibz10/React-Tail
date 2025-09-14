@@ -1,8 +1,14 @@
 // src/components/LoginCard.jsx
 
-import React from 'react';
+import React, {useState} from 'react';
 
+const countries = [
+  { code: 'IN', name: 'India', dial_code: '+91', flag: '🇮🇳' },
+  { code: 'US', name: 'United States', dial_code: '+1', flag: '🇺🇸' },
+  { code: 'GB', name: 'United Kingdom', dial_code: '+44', flag: '🇬🇧' },
+]
 const LoginCard = () => {
+    
   return (
     <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200 w-full max-w-md">
       <h2 className="text-xl font-semibold text-gray-800 pb-2 mb-6 border-b-2 border-blue-600 inline-block">
