@@ -8,7 +8,7 @@ const Logo = () => (
         <svg className="h-8 w-auto text-blue-600" viewBox="0 0 32 32" fill="currentColor">
             <path d="M16 0 L32 16 16 32 L0 16 Z M16 4 L4 16 L16 28 L28 16" />
         </svg>
-        <span className="feont-bold text-xl text-gray-800">MULTYFI</span>
+        <span className="feont-bold text-xl text-gray-800">Hi-soft</span>
     </a>
 );
 
