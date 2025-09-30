@@ -1,0 +1,19 @@
+/* Custom styles for the unified phone input field */
+.custom-phone-input .react-tel-input .form-control {
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 1rem 1rem 1rem 3.5rem; /* py-4 and custom left padding */
+  width: 100% !important;
+}
+
+.custom-phone-input .react-tel-input .selected-flag {
+  border-right: 1px solid #d1d5db; /* Separator border */
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  height: 100%;
+}
+
+.custom-phone-input .react-tel-input .flag-dropdown {
+  background-color: transparent !important;
+  border-right: none !important;
+}

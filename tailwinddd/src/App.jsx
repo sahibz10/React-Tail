@@ -7,6 +7,8 @@ import HeroSection from './components/HeroSec';
 import Clients from './components/Clients';
 import WhatWeDo from './components/WhatweDo';
 import LiveTrades from './components/LiveTrades';
+import WhatYouGet from './components/WhatYouGet';
+import HowToUse from './components/HowToUse';
 import Footer from './components/Footer';
 
 
@@ -21,7 +23,10 @@ function App() {
       <Clients />
       <WhatWeDo />
       <LiveTrades />
+      <WhatYouGet />
+      <HowToUse />
       <Footer />
+
     </div>
   );
 }
