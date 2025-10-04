@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-// These imports are placeholders. You will need to replace them with your actual images.
+// Yeh images ke imports hain. Inhe actual trade images se replace karna hoga.
 import tradeImage1 from '../assets/card1.png';
 import tradeImage2 from '../assets/card2.png';
 import tradeImage3 from '../assets/card3.png';
@@ -9,7 +9,7 @@ import tradeImage6 from '../assets/card6.png';
 import tradeImage7 from '../assets/card7.png';
 
 
-// Placeholder data for each trade card
+// Har trade card ke liye placeholder data.
 const trades = [
   {
     image: tradeImage1,
@@ -71,9 +71,12 @@ const trades = [
   },
 ];
 
+// 'LiveTrades' component ek horizontally scrollable card slider banata hai.
 const LiveTrades = () => {
+  // 'scrollContainerRef' se slider container ka reference liya gaya hai.
   const scrollContainerRef = useRef(null);
 
+  // Yeh function button click par slider ko left mein scroll karta hai.
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
@@ -83,6 +86,7 @@ const LiveTrades = () => {
     }
   };
 
+  // Yeh function button click par slider ko right mein scroll karta hai.
   const scrollRight = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
@@ -94,6 +98,7 @@ const LiveTrades = () => {
 
   return (
     <section className="container mx-auto px-6 py-16 md:py-24">
+      {/* Section ka header aur description */}
       <div className="text-center mb-12">
         <p className="text-gray-500 font-semibold uppercase text-sm mb-2">Buy/Sell Recommendations</p>
         <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-2">Live Trades</h2>
@@ -103,38 +108,44 @@ const LiveTrades = () => {
       </div>
 
       <div className="relative">
-        {/* Left Scroll Arrow */}
+        {/* Left Scroll Arrow button */}
         <button
           onClick={scrollLeft}
           className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
         >
+          {/* SVG icon for left arrow */}
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
-        {/* Right Scroll Arrow */}
+        {/* Right Scroll Arrow button */}
         <button
           onClick={scrollRight}
           className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10"
         >
+          {/* SVG icon for right arrow */}
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
-        {/* Slider Container */}
+        {/* Slider Container jise scroll kiya jayega. */}
         <div
-          ref={scrollContainerRef}
+          ref={scrollContainerRef} // Ref ko is container se joda gaya hai.
+          // overflow-x-auto, snap, aur hide-scrollbar se horizontal scrolling aur snapping functionality aati hai.
           className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 md:gap-8 py-4 px-6 md:px-12"
         >
+          {/* trades array par map karke har trade card render kiya gaya hai. */}
           {trades.map((trade, index) => (
             <div key={index} className="flex-shrink-0 snap-center w-64 md:w-80 lg:w-96">
+              {/* Card ka main div */}
               <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
                 <div className="relative">
+                  {/* Trade ki image */}
                   <img src={trade.image} alt="Live Trade" className="w-full object-cover" />
                   
-                  {/* Top "timeframe" pill */}
+                  {/* Top par 'timeframe' pill */}
                   <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
                     {trade.timeframe}
                   </div>
@@ -147,13 +158,15 @@ const LiveTrades = () => {
                   </div>
                 </div>
 
-                {/* Content below the image */}
+                {/* Image ke niche ka content */}
                 <div className="p-6 text-center">
                   <h4 className="text-gray-800 font-bold text-lg mb-4">
+                    {/* Gradient text */}
                     <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                       Unlock Now
                     </span>
                   </h4>
+                  {/* BUY/SELL metrics */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     {trade.metrics.map((metric, i) => (
                       <div key={i} className="flex flex-col items-center">

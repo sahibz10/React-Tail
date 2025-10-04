@@ -1,19 +1,22 @@
 import React from 'react';
+// Social icons ke liye react-icons library se components import kiye gaye hain.
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
-// Placeholder QR code images. You'll need to add your own.
+// QR code images ke placeholders. Inhe actual images se replace karna hoga.
 import qrCode1 from '../assets/appstoreqr.png';
 import qrCode2 from '../assets/playstoreq4.png';
 // import logo from '../assets/logomultify.svg';
 import hilogo from '../assets/hi-soft.png';
 
 const Footer = () => {
+    // Footer links ko ek object mein define kiya gaya hai, categories ke saath.
     const footerLinks = {
         multyfi: ['About us', 'Contact us', 'FAQs'],
         legal: ['Privacy Policy', 'Disclaimer and Disclosures', 'Terms & Conditions', 'MITC', 'Refund Policy', 'SEBI RA Policy'],
         regulations: ['Complaints', 'Expectations', 'Grievance', 'Internal Policy', 'Investor Charter', 'Research Rationale'],
     };
 
+    // Social media icons aur unke links ka array.
     const socialIcons = [
         { icon: <FaFacebook />, link: '#' },
         { icon: <FaInstagram />, link: '#' },
@@ -24,14 +27,16 @@ const Footer = () => {
     return (
         <footer className="bg-[#f7f8fc] py-16 text-gray-700">
             <div className="container mx-auto px-6">
-                {/* Top Section */}
+                {/* Top Section - Logo, description, and social icons */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Logo and Description */}
                     <div className="col-span-1 lg:col-span-2">
+                        {/* Logo image */}
                         <div className="flex items-center space-x-2 mb-4">
                             <img src={hilogo} alt="Hi-soft Logo" className="h-10 w-auto" />
                         </div>
                         <p className="text-sm max-w-lg mb-4">
+                            {/* Company ka description */}
                             Hi-Soft is a SEBI registered stock advisor, which tells its customers what stock to buy and when to buy.
                         </p>
                     </div>
@@ -40,6 +45,7 @@ const Footer = () => {
                     <div className="md:col-span-1 lg:col-span-2 text-left md:text-right">
                         <h4 className="text-gray-900 font-bold mb-4 uppercase text-sm">Follow Us On</h4>
                         <div className="flex space-x-4 md:justify-end">
+                            {/* socialIcons array par map karke icons render kiye gaye hain. */}
                             {socialIcons.map((item, index) => (
                                 <a key={index} href={item.link} className="text-gray-500 hover:text-blue-600 transition-colors">
                                     {item.icon}
@@ -51,10 +57,11 @@ const Footer = () => {
 
                 <hr className="my-10 border-gray-300" />
 
-                {/* Links and QR Codes Section */}
+                {/* Middle Section - Links aur QR Codes */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                     {/* Links Section */}
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                        {/* footerLinks object ke keys (categories) par map karke links render kiye gaye hain. */}
                         {Object.keys(footerLinks).map((category, index) => (
                             <div key={index}>
                                 <h4 className="text-gray-900 font-bold mb-4 uppercase text-sm">{category}</h4>
@@ -86,13 +93,15 @@ const Footer = () => {
 
                 <hr className="my-10 border-gray-300" />
 
-                {/* Final Disclaimer and Copyright */}
+                {/* Bottom Section - Disclaimer aur Copyright */}
                 <div className="lg:text-right text-center md:text-left mb-6">
                     <h4 className="text-gray-900 font-bold mb-2">Disclaimer and Disclosures</h4>
                     <p className="text-sm text-gray-500 mb-4">
+                        {/* Email link */}
                         For any queries contact: <a href="mailto:support@multyfi.com" className="text-blue-600 hover:underline">support@hi-soft.com</a>
                     </p>
                     <p className="text-xs text-gray-500">
+                        {/* Detailed disclaimer */}
                         All trades and investments are subject to market risk. Hi-Soft does not hold any responsibility for the money lost in losses nor does it take any partnership in the same. Hi-Soft does not commit to any intake of capital for trading or investment but serves to provide help based on its knowledge and experience on investor’s direction.
                     </p>
                 </div>

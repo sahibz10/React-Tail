@@ -1,9 +1,8 @@
-
 import React from 'react';
 
+// 'HowToUse' component ek YouTube video player ko display karta hai.
 const HowToUse = () => {
-    // This is the embed URL for a YouTube video.
-    // Replace "VIDEO_ID_HERE" with the actual ID of your video.
+    // YouTube video ka embed URL. "PoocXxQZvgI" video ki ID hai.
     const videoEmbedUrl = "https://www.youtube.com/embed/PoocXxQZvgI?si=f00tzixCorrExmfM";
 
     return (
@@ -12,10 +11,12 @@ const HowToUse = () => {
                 How to Use?
             </h2>
 
+            {/* Video container jise responsive banaya gaya hai. */}
+            {/* 'pt-[56.25%]' property se 16:9 aspect ratio maintain kiya gaya hai. */}
             <div className="relative overflow-hidden pt-[56.25%] rounded-3xl shadow-xl">
                 <iframe
                     className="absolute top-0 left-0 w-full h-full"
-                    src={videoEmbedUrl}
+                    src={videoEmbedUrl} // Video ka source URL.
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
